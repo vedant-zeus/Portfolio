@@ -31,10 +31,10 @@ const Navigation: React.FC = () => {
           : 'bg-white/90 border-gray-200/50'
       } border`}
     >
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div className=" max-w-7x1 mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex justify-between items-center h-16">
           {/* Desktop Navigation */}
-          <div className="hidden md:flex items-center space-x-8 w-3/4">
+          <div className="hidden md:flex items-center space-x-8 w-3/q4">
             {navLinks.map((link) => (
               <button
                 key={link.href}
@@ -44,7 +44,6 @@ const Navigation: React.FC = () => {
                   ${isDark ? 'text-gray-300' : 'text-gray-700'}
                 `}
               >
-                {/* Gradient glowing text on hover */}
                 <span
                   className={`transition-all duration-300 ${
                     isDark
@@ -55,7 +54,6 @@ const Navigation: React.FC = () => {
                   {link.label}
                 </span>
 
-                {/* Underline slide-in effect */}
                 <span
                   className={`absolute left-0 -bottom-1 h-0.5 w-0 
                   group-hover:w-full transition-all duration-500 
@@ -65,6 +63,7 @@ const Navigation: React.FC = () => {
             ))}
           </div>
 
+          {/* Desktop Theme Button */}
           <div className="hidden md:flex items-center">
             <button
               onClick={toggleTheme}

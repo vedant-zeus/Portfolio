@@ -95,40 +95,50 @@ const Hero: React.FC = () => {
 </div>
 
           {/* Right Side - Wave Pixelation Reveal + Hover */}
-          <div className="lg:col-span-3 relative h-screen flex items-center justify-end">
-            <motion.div
-              className="relative w-[60%] h-[90%] lg:w-[65%] lg:h-[90%] grid grid-rows-10 gap-0 overflow-hidden group"
-              initial="hidden"
-              animate="visible"
-              whileHover="pixelated"
-              variants={{
-                visible: {
-                  transition: { staggerChildren: 0.15, delayChildren: 0.3 }
-                },
-                pixelated: {
-                  transition: { staggerChildren: 0.05 }
-                }
-              }}
-            >
-              {blocks.map((_, i) => (
-                <motion.div
-                  key={i}
-                  className="w-full h-full"
-                  style={{
-                    backgroundImage: "url(/vedant.png)",
-                    backgroundSize: `100% ${rows * 100}%`,
-                    backgroundPosition: `0 ${(i / (rows - 1)) * 100}%`,
-                  }}
-                  variants={{
-                    hidden: { opacity: 0 },
-                    visible: { opacity: 1 },
-                    pixelated: { opacity: 0.6 }
-                  }}
-                  transition={{ duration: 0.6, ease: "easeOut" }}
-                />
-              ))}
-            </motion.div>
-          </div>
+<div className="lg:col-span-3 relative h-screen flex items-center justify-end">
+  <motion.div
+    className="relative w-[60%] h-[90%] lg:w-[65%] lg:h-[90%] grid grid-rows-10 gap-0 overflow-hidden group"
+    initial="hidden"
+    animate="visible"
+    whileHover="pixelated"
+    variants={{
+      visible: {
+        transition: { staggerChildren: 0.15, delayChildren: 0.3 }
+      },
+      pixelated: {
+        transition: { staggerChildren: 0.05 }
+      }
+    }}
+  >
+    {/* Mobile Image (simplified + reduced size) */}
+  <div className="md:hidden w-[80%] h-[50vh] flex items-center justify-center">
+    <img
+      src="/vedant.png"
+      alt="Vedant"
+      className="w-full h-full object-contain rounded-lg shadow-lg"
+    />
+  </div>
+    {blocks.map((_, i) => (
+      <motion.div
+        key={i}
+        className="w-full h-full"
+        style={{
+          backgroundImage: "url(/vedant.png)",
+          backgroundSize: `100% ${rows * 100}%`,
+          backgroundPosition: `0 ${(i / (rows - 1)) * 100}%`,
+        }}
+        variants={{
+          hidden: { opacity: 0 },
+          visible: { opacity: 1 },
+          pixelated: { opacity: 0.6 }
+        }}
+        transition={{ duration: 0.6, ease: "easeOut" }}
+      />
+    ))}
+  </motion.div>
+</div>
+
+
         </div>
       </div>
     </section>
