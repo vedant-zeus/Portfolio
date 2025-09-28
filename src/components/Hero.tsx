@@ -123,7 +123,7 @@ const Hero: React.FC = () => {
         key={i}
         className="w-full h-full"
         style={{
-          backgroundImage: "url(images/vedant.png)",
+          backgroundImage: "url(vedant.png)",
           backgroundSize: `100% ${rows * 100}%`,
           backgroundPosition: `0 ${(i / (rows - 1)) * 100}%`,
         }}
