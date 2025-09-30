@@ -15,20 +15,20 @@ const Projects: React.FC = () => {
   "demo": "https://flavourcraft.vercel.app/"
     },
     {
-      title: 'E-Commerce Platform',
+      title: 'Cars E-Commerce',
       description: 'Full-stack e-commerce solution with user authentication, payment integration, inventory management, and admin dashboard.',
       image: 'https://images.pexels.com/photos/230544/pexels-photo-230544.jpeg?auto=compress&cs=tinysrgb&w=800',
       tech: ['Node.js', 'React', 'MongoDB', 'Stripe API'],
-      github: '#',
-      demo: '#'
+      github: 'https://github.com/vedant-zeus/Cars-Ecommerce.git',
+      demo: 'https://cars-ecommerce-delta.vercel.app/'
     },
     {
-      title: 'ML Recommendation System',
+      title: 'Document Wallet',
       description: 'Machine learning-powered recommendation engine using collaborative filtering and content-based approaches with TensorFlow.',
       image: 'https://images.pexels.com/photos/8386440/pexels-photo-8386440.jpeg?auto=compress&cs=tinysrgb&w=800',
       tech: ['Python', 'TensorFlow', 'Pandas', 'Flask'],
-      github: '#',
-      demo: '#'
+      github: 'https://github.com/vedant-zeus/Document-Wallet.git',
+      demo: ''
     }
   ];
 
