@@ -35,9 +35,9 @@ const AppContent: React.FC = () => {
         <Navigation />
         <Hero />
         <About />
-        <Projects />
-        <Services />
         <PersonalInfo />
+        <Services />
+        <Projects />
         <Contact />
         
         {/* Footer */}
