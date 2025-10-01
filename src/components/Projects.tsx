@@ -15,21 +15,21 @@ const Projects: React.FC = () => {
   "demo": "https://flavourcraft.vercel.app/"
     },
     {
-      title: 'Cars E-Commerce',
-      description: 'Full-stack e-commerce solution with user authentication, payment integration, inventory management, and admin dashboard.',
-      image: 'https://images.pexels.com/photos/230544/pexels-photo-230544.jpeg?auto=compress&cs=tinysrgb&w=800',
-      tech: ['Node.js', 'React', 'MongoDB', 'Stripe API'],
-      github: 'https://github.com/vedant-zeus/Cars-Ecommerce.git',
-      demo: 'https://cars-ecommerce-delta.vercel.app/'
-    },
-    {
-      title: 'Document Wallet',
-      description: 'Machine learning-powered recommendation engine using collaborative filtering and content-based approaches with TensorFlow.',
-      image: 'https://images.pexels.com/photos/8386440/pexels-photo-8386440.jpeg?auto=compress&cs=tinysrgb&w=800',
-      tech: ['Python', 'TensorFlow', 'Pandas', 'Flask'],
-      github: 'https://github.com/vedant-zeus/Document-Wallet.git',
-      demo: ''
-    }
+  title: 'Cars E-Commerce',
+  description: 'Car marketplace with buying and comparison features (like smartphone sites). Built with TypeScript, React (Vite), and Supabase for authentication, DB, and data management.',
+  image: 'https://images.pexels.com/photos/799443/pexels-photo-799443.jpeg',
+  tech: ['TypeScript', 'React (Vite)', 'Supabase'],
+  github: 'https://github.com/vedant-zeus/Cars-Ecommerce.git',
+  demo: 'https://cars-ecommerce-delta.vercel.app/'
+},
+{
+  title: 'Document Wallet',
+  description: 'Secure document storage app showcasing data authorization, per-user database control, and Supabase Row-Level Security. Built with TypeScript, React (Vite), and Supabase.',
+  image: 'https://images.pexels.com/photos/33428404/pexels-photo-33428404.jpeg',
+  tech: ['TypeScript', 'React (Vite)', 'Supabase'],
+  github: 'https://github.com/vedant-zeus/Document-Wallet.git',
+  demo: 'https://document-wallet-nine.vercel.app/'
+}
   ];
 
   return (
