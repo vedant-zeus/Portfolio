@@ -2,11 +2,12 @@ import React, { useRef, useEffect, useState } from "react";
 import { motion, useScroll, useTransform, useSpring } from "framer-motion";
 
 const timeline = [
-  { year: "2018", title: "🌱 Started Coding", desc: "Wrote my first lines of code and got curious about tech." },
-  { year: "2020", title: "💻 First Project", desc: "Built a small app that sparked my passion for development." },
-  { year: "2022", title: "🚀 Internships & Learning", desc: "Worked on real projects and improved full-stack skills." },
-  { year: "2025", title: "🌍 Future Vision", desc: "Aiming to become a data analyst & build impactful projects." },
+  { year: "Till 2021", title: "DAV Public School", desc: "Completed Secondary School education at DAV Public School." },
+  { year: "2021 – 2023", title: "Pratibha International Jr. College", desc: "Studied Science stream and developed strong foundations." },
+  { year: "2023 – 2027", title: "SRM Institute of Science and Technology", desc: "Pursuing B.Tech with the vision to become a skilled engineer." },
+  { year: "Future", title: "Road to Skilled Engineer", desc: "Continuously learning, building projects, and growing as an engineer." },
 ];
+
 
 const AnimatedBackground = () => {
   const icons = ['✨', '⭐', '💫', '🌟', '✦', '★', '☆', '⚡', '💥'];
