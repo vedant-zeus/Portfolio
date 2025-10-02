@@ -1,5 +1,5 @@
 import React from 'react';
-import { Download, Mail } from 'lucide-react';
+import { Download, Mail, Github, Linkedin, Instagram } from 'lucide-react';
 import { useTheme } from '../contexts/ThemeContext';
 import { motion } from "framer-motion";
 
@@ -33,7 +33,7 @@ const Hero: React.FC = () => {
       </div>
 
       {/* Main content centered */}
-      <div className="relative z-10 max-w-4xl mx-auto px-6 flex flex-col items-center justify-center space-y-6">
+      <div className="relative z-10 max-w-4xl mx-auto px-6 pt-10 flex flex-col items-center justify-center space-y-6">
         <motion.h1
           initial={{ opacity: 0, scale: 0.8, y: 30 }}
           animate={{ opacity: 1, scale: 1, y: 0 }}
@@ -98,6 +98,59 @@ const Hero: React.FC = () => {
             <Mail size={20} />
             <span>My Creations</span>
           </button>
+        </div>
+
+        {/* Social Icons */}
+        <div className="flex gap-6 mt-6">
+          <a 
+            href="https://github.com/vedant-zeus" 
+            target="_blank" 
+            rel="noopener noreferrer" 
+            className={`p-3 rounded-xl transition-all duration-200 hover:scale-110 ${
+                        isDark 
+                          ? 'bg-gray-800 text-gray-400 hover:bg-gray-700' 
+                          : 'bg-white text-gray-600 hover:bg-gray-50'
+            }`}
+          >
+            <Github size={22} />
+          </a>
+
+          <a 
+            href="https://www.linkedin.com/in/vedant-amrutkar-87b266288" 
+            target="_blank" 
+            rel="noopener noreferrer" 
+            className={`p-3 rounded-xl transition-all duration-200 hover:scale-110 ${
+                        isDark 
+                          ? 'bg-gray-800 text-gray-400 hover:bg-gray-700' 
+                          : 'bg-white text-gray-600 hover:bg-gray-50'
+            }`}
+          >
+            <Linkedin size={22} />
+          </a>
+
+          <a 
+            href="https://instagram.com/vedant_a18" 
+            target="_blank" 
+            rel="noopener noreferrer" 
+            className={`p-3 rounded-xl transition-all duration-200 hover:scale-110 ${
+                        isDark 
+                          ? 'bg-gray-800 text-gray-400 hover:bg-gray-700' 
+                          : 'bg-white text-gray-600 hover:bg-gray-50'
+            }`}
+          >
+            <Instagram size={22} />
+          </a>
+
+          <a 
+            href="mailto:vedant8405@gmail.com" 
+            className={`p-3 rounded-xl transition-all duration-200 hover:scale-110 ${
+                        isDark 
+                          ? 'bg-gray-800 text-gray-400 hover:bg-gray-700' 
+                          : 'bg-white text-gray-600 hover:bg-gray-50'
+            }`}
+          >
+            <Mail size={22} />
+          </a>
         </div>
       </div>
     </section>

@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { Mail, Phone, MapPin, Linkedin, Github, Send, Loader2, CheckCircle, XCircle } from 'lucide-react';
+import { Mail, Phone, MapPin, Linkedin, Github,Instagram, Send, Loader2, CheckCircle, XCircle } from 'lucide-react';
 // Assuming 'useTheme' and 'React.FC' are available in your environment
 // import { useTheme } from '../contexts/ThemeContext'; 
 
@@ -72,10 +72,10 @@ const Contact: React.FC = () => {
       href: 'mailto:vedant8405@gmail.com' // Direct mailto link 
     },
     {
-      icon: Phone,
-      label: 'Phone',
-      value: '+91 8408939494',
-      href: 'tel:+918408939494'
+      icon: Mail,
+      label: 'Work Mail',
+      value: 'va5726@srmist.edu.in',
+      href: 'mailto:va5726@srmist.edu.in'
     },
     {
       icon: MapPin,
@@ -97,6 +97,18 @@ const Contact: React.FC = () => {
       label: 'GitHub',
       href: 'https://github.com/vedant-zeus',
       color: isDark ? 'hover:text-gray-300' : 'hover:text-gray-700'
+    },
+    {
+      icon: Instagram,
+      label: 'Instagram',
+      href: 'https://instagram.com/vedant_a18',
+      color: isDark ? 'hover:text-gray-300' : 'hover:text-gray-700'
+    },
+    {
+      icon: Mail,
+      label: 'Mail',
+      href: 'vedant8405@gmail.com',
+      color: isDark ? 'hover:text-gray-300' : 'hover:text-gray-700'
     }
   ];
 
@@ -117,7 +129,7 @@ const Contact: React.FC = () => {
           <p className={`text-lg max-w-2xl mx-auto ${
             isDark ? 'text-gray-300' : 'text-gray-600'
           }`}>
-            I'm always open to discussing new opportunities and interesting projects
+            Always open to discussing new opportunities and interesting projects
           </p>
         </div>
 
@@ -134,8 +146,7 @@ const Contact: React.FC = () => {
                 isDark ? 'text-gray-300' : 'text-gray-600'
               }`}>
                 Whether you have a project in mind, or just want to say hello, 
-                I'd love to hear from you. Let's create something amazing together. 
-                Happy Hacking ! 🚀
+                I'd love to hear from you. Let's create something amazing together. Feel free to reach out via the form or through my social channels.
               </p>
             </div>
 

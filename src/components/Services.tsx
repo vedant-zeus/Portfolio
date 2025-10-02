@@ -19,15 +19,15 @@ const Services: React.FC = () => {
       ],
     },
     {
-      icon: BarChart3,
-      title: 'Data Analytics',
+     icon: Brain,
+      title: "3D Graphics & Design",
       description:
-        'Transform your data into actionable insights with advanced analytics and visualization.',
+        "Creating immersive 3D visuals and interactive experiences for the web using modern frameworks.",
       features: [
-        'Data Visualization',
-        'Statistical Analysis',
-        'Business Intelligence',
-        'Report integration',
+        "Three.js / WebGL",
+        "3D Modeling",
+        "Interactive Elements",
+        "Visual Storytelling",
       ],
     },
     {
@@ -42,16 +42,17 @@ const Services: React.FC = () => {
         'Computer Vision',
       ],
     },
-    {
-      icon: Users,
-      title: 'Machine Learning',
-      description:
-        'Technical training and consultation services for teams and individuals.',
-      features: [
-        "LLM's Integration",
-        'Code Reviews',
-        'Training Models',
-        'Best Practices',
+    
+      {
+  icon: Users,
+  title: "UI / UX Design",
+  description:
+    "Designing intuitive, user-friendly, and visually appealing interfaces that enhance user experience.",
+  features: [
+    "Wireframing & Prototyping",
+    "Responsive UI Design",
+    "User Research & Testing",
+    "WordPress",
       ],
     },
   ];
@@ -59,33 +60,34 @@ const Services: React.FC = () => {
   return (
     <section
       id="services"
-      className={`py-32 pt-30 $ ${
+      className={`py-32 pt-30 ${
         isDark
           ? 'bg-gradient-to-b from-gray-900 to-gray-800'
           : 'bg-gradient-to-b from-gray-50 to-white'
       }`}
     >
-      <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
-        {/* Section Heading */}
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        {/* Section Heading */}
         <div className="text-center mb-16">
-          <h2 className={`text-4xl lg:text-5xl font-bold mb-6 ${
-            isDark ? 'text-white' : 'text-gray-900'
-          }`}>
+          <h2
+            className={`text-4xl lg:text-5xl font-bold mb-6 ${
+              isDark ? 'text-white' : 'text-gray-900'
+            }`}
+          >
             Services I Offer
           </h2>
           <div className="w-24 h-1 bg-gradient-to-r from-blue-400 to-purple-600 mx-auto mb-8"></div>
-          <p className={`text-lg max-w-2xl mx-auto ${
-            isDark ? 'text-gray-300' : 'text-gray-600'
-          }`}>
-           Comprehensive solutions tailored to your business needs
+          <p
+            className={`text-lg max-w-2xl mx-auto ${
+              isDark ? 'text-gray-300' : 'text-gray-600'
+            }`}
+          >
+            Comprehensive solutions tailored to your business needs
           </p>
         </div>
-          
-        </div>
 
-        {/* Service Cards */}
-        <div className="space-y-10">
+        {/* Service Cards Grid */}
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
           {services.map((service, index) => {
             const Icon = service.icon;
             return (
@@ -97,6 +99,7 @@ const Services: React.FC = () => {
                     : 'bg-white border border-gray-100'
                 }`}
               >
+                {/* Icon + Title */}
                 <div className="flex items-center mb-6">
                   <div
                     className={`p-4 rounded-xl mr-4 ${
@@ -117,6 +120,7 @@ const Services: React.FC = () => {
                   </h3>
                 </div>
 
+                {/* Description */}
                 <p
                   className={`mb-6 leading-relaxed ${
                     isDark ? 'text-slate-300' : 'text-gray-600'
@@ -125,6 +129,7 @@ const Services: React.FC = () => {
                   {service.description}
                 </p>
 
+                {/* Features */}
                 <div className="flex flex-wrap gap-2">
                   {service.features.map((feature, featureIndex) => (
                     <span
