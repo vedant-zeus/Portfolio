@@ -13,6 +13,21 @@ const Hero: React.FC = () => {
     }
   };
 
+  // Parent container controls staggered animations
+  const containerVariants = {
+    hidden: { opacity: 0 },
+    visible: {
+      opacity: 1,
+      transition: { staggerChildren: 0.3 }
+    }
+  };
+
+  // Children slide from bottom
+  const itemVariants = {
+    hidden: { opacity: 0, y: 60 },
+    visible: { opacity: 1, y: 0, transition: { duration: 0.8, ease: "easeOut" } }
+  };
+
   return (
     <section 
       id="hero"
@@ -26,14 +41,20 @@ const Hero: React.FC = () => {
       <div className="absolute inset-0 overflow-hidden">
         <div className={`absolute -top-4 -left-4 w-72 h-72 rounded-full mix-blend-multiply filter blur-xl opacity-70 animate-pulse ${
           isDark ? 'bg-cyan-600/20' : 'bg-pink-300/30'
-        }`}></div>
+        }`} />
         <div className={`absolute top-1/2 -right-4 w-72 h-72 rounded-full mix-blend-multiply filter blur-xl opacity-70 animate-pulse ${
           isDark ? 'bg-emerald-600/20' : 'bg-yellow-300/30'
-        }`}></div>
+        }`} />
       </div>
 
-      {/* Main content centered */}
-      <div className="relative z-10 max-w-4xl mx-auto px-6 pt-10 flex flex-col items-center justify-center space-y-6">
+      {/* Main content */}
+      <motion.div 
+        className="relative z-10 max-w-4xl mx-auto px-6 pt-10 flex flex-col items-center justify-center space-y-6"
+        variants={containerVariants}
+        initial="hidden"
+        animate="visible"
+      >
+        {/* Name (animates differently - zoom) */}
         <motion.h1
           initial={{ opacity: 0, scale: 0.8, y: 30 }}
           animate={{ opacity: 1, scale: 1, y: 0 }}
@@ -49,23 +70,20 @@ const Hero: React.FC = () => {
           Vedant Sanjay Amrutkar
         </motion.h1>
 
-        <p className={`text-xl lg:text-2xl ${
-          isDark ? 'text-gray-300' : 'text-gray-600'
-        }`}>
+        {/* Role */}
+        <motion.p variants={itemVariants} className={`text-xl lg:text-2xl ${isDark ? 'text-gray-300' : 'text-gray-600'}`}>
           <span className="block text-transparent bg-clip-text bg-gradient-to-r from-emerald-600 to-teal-400 drop-shadow-[0_0_25px_rgba(50,200,150,0.4)]">
             Full-stack Developer & Data Enthusiast
           </span>
-        </p>
+        </motion.p>
 
-        <p className={`text-lg max-w-2xl leading-relaxed ${
-          isDark ? 'text-gray-400' : 'text-gray-700'
-        }`}>
+        {/* Description */}
+        <motion.p variants={itemVariants} className={`text-lg max-w-2xl leading-relaxed ${isDark ? 'text-gray-400' : 'text-gray-700'}`}>
           Crafting immersive user experiences paired with reliable database solutions, blending creativity and performance to deliver seamless, engaging, and immersive web applications.
-        </p>
+        </motion.p>
 
         {/* Buttons */}
-        <div className="flex flex-wrap gap-4 justify-center">
-          {/* Resume Button */}
+        <motion.div variants={itemVariants} className="flex flex-wrap gap-4 justify-center">
           <button
             className={`group px-8 py-4 text-white font-semibold rounded-xl hover:scale-105 transform transition-all duration-200 shadow-lg hover:shadow-xl flex items-center gap-2
               bg-gradient-to-r ${isDark 
@@ -86,7 +104,6 @@ const Hero: React.FC = () => {
             Download Resume
           </button>
 
-          {/* Contact Button */}
           <button 
             onClick={scrollToContact}
             className={`px-8 py-4 font-semibold rounded-xl transition-all duration-200 hover:scale-105 transform shadow-lg hover:shadow-xl flex items-center gap-2 
@@ -98,61 +115,47 @@ const Hero: React.FC = () => {
             <Mail size={20} />
             <span>My Creations</span>
           </button>
-        </div>
+        </motion.div>
 
         {/* Social Icons */}
-        <div className="flex gap-6 mt-6">
-          <a 
-            href="https://github.com/vedant-zeus" 
-            target="_blank" 
-            rel="noopener noreferrer" 
+        <motion.div variants={itemVariants} className="flex gap-6 mt-6">
+          <a href="https://github.com/vedant-zeus" target="_blank" rel="noopener noreferrer"
             className={`p-3 rounded-xl transition-all duration-200 hover:scale-110 ${
-                        isDark 
-                          ? 'bg-gray-800 text-gray-400 hover:bg-gray-700' 
-                          : 'bg-white text-gray-600 hover:bg-gray-50'
+              isDark ? 'bg-gray-800 text-gray-400 hover:bg-gray-700' 
+                     : 'bg-white text-gray-600 hover:bg-gray-50'
             }`}
           >
             <Github size={22} />
           </a>
 
-          <a 
-            href="https://www.linkedin.com/in/vedant-amrutkar-87b266288" 
-            target="_blank" 
-            rel="noopener noreferrer" 
+          <a href="https://www.linkedin.com/in/vedant-amrutkar-87b266288" target="_blank" rel="noopener noreferrer"
             className={`p-3 rounded-xl transition-all duration-200 hover:scale-110 ${
-                        isDark 
-                          ? 'bg-gray-800 text-gray-400 hover:bg-gray-700' 
-                          : 'bg-white text-gray-600 hover:bg-gray-50'
+              isDark ? 'bg-gray-800 text-gray-400 hover:bg-gray-700' 
+                     : 'bg-white text-gray-600 hover:bg-gray-50'
             }`}
           >
             <Linkedin size={22} />
           </a>
 
-          <a 
-            href="https://instagram.com/vedant_a18" 
-            target="_blank" 
-            rel="noopener noreferrer" 
+          <a href="https://instagram.com/vedant_a18" target="_blank" rel="noopener noreferrer"
             className={`p-3 rounded-xl transition-all duration-200 hover:scale-110 ${
-                        isDark 
-                          ? 'bg-gray-800 text-gray-400 hover:bg-gray-700' 
-                          : 'bg-white text-gray-600 hover:bg-gray-50'
+              isDark ? 'bg-gray-800 text-gray-400 hover:bg-gray-700' 
+                     : 'bg-white text-gray-600 hover:bg-gray-50'
             }`}
           >
             <Instagram size={22} />
           </a>
 
-          <a 
-            href="mailto:vedant8405@gmail.com" 
+          <a href="mailto:vedant8405@gmail.com"
             className={`p-3 rounded-xl transition-all duration-200 hover:scale-110 ${
-                        isDark 
-                          ? 'bg-gray-800 text-gray-400 hover:bg-gray-700' 
-                          : 'bg-white text-gray-600 hover:bg-gray-50'
+              isDark ? 'bg-gray-800 text-gray-400 hover:bg-gray-700' 
+                     : 'bg-white text-gray-600 hover:bg-gray-50'
             }`}
           >
             <Mail size={22} />
           </a>
-        </div>
-      </div>
+        </motion.div>
+      </motion.div>
     </section>
   );
 };

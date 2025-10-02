@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { Mail, Phone, MapPin, Linkedin, Github,Instagram, Send, Loader2, CheckCircle, XCircle } from 'lucide-react';
+import { Mail, MapPin, Linkedin, Github,Instagram, Send, Loader2, CheckCircle, XCircle } from 'lucide-react';
 // Assuming 'useTheme' and 'React.FC' are available in your environment
 // import { useTheme } from '../contexts/ThemeContext'; 
 
