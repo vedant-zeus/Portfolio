@@ -7,138 +7,97 @@ const Hero: React.FC = () => {
   const { isDark } = useTheme();
 
   const scrollToContact = () => {
-    const element = document.querySelector('#contact');
+    const element = document.querySelector('#projects');
     if (element) {
       element.scrollIntoView({ behavior: 'smooth' });
     }
   };
 
-  // Wave Pixelation settings
-  const rows = 10;
-  const blocks = Array.from({ length: rows });
-
   return (
     <section 
       id="hero"
-      className={`min-h-screen relative overflow-hidden ${
+      className={`min-h-screen relative overflow-hidden flex items-center justify-center text-center ${
         isDark 
-          ? 'bg-gradient-to-br from-gray-900 via-blue-900/20 to-gray-900' 
-          : 'bg-gradient-to-br from-gray-50 via-blue-50 to-gray-100'
+          ? 'bg-gradient-to-br from-black via-gray-900 to-blue-950' 
+          : 'bg-gradient-to-br from-gray-50 via-pink-50 to-yellow-50'
       }`}
     >
       {/* Background Blobs */}
       <div className="absolute inset-0 overflow-hidden">
         <div className={`absolute -top-4 -left-4 w-72 h-72 rounded-full mix-blend-multiply filter blur-xl opacity-70 animate-pulse ${
-          isDark ? 'bg-blue-600/20' : 'bg-blue-300/30'
+          isDark ? 'bg-cyan-600/20' : 'bg-pink-300/30'
         }`}></div>
         <div className={`absolute top-1/2 -right-4 w-72 h-72 rounded-full mix-blend-multiply filter blur-xl opacity-70 animate-pulse ${
-          isDark ? 'bg-purple-600/20' : 'bg-purple-300/30'
+          isDark ? 'bg-emerald-600/20' : 'bg-yellow-300/30'
         }`}></div>
       </div>
-      
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-0 relative z-10">
-        {/* Removed negative margin and added top padding for fine-tuning */}
-        <div className="grid lg:grid-cols-5 gap-0 items-center min-h-screen pt-12">
-          
-                {/* left side */}
 
-          <div className="lg:col-span-2 space-y-8 animate-fade-in pr-8 pl-8">
-  <div className="space-y-4">
-    <h1 className={`text-5xl lg:text-7xl font-bold leading-tight ${
-      isDark ? 'text-white' : 'text-gray-900'
-    }`}>
-      Vedant Sanjay Amrutkar
-    </h1>
-    <p className={`text-xl lg:text-2xl ${
-      isDark ? 'text-gray-300' : 'text-gray-600'
-    }`}>
-      <span className="block text-transparent bg-clip-text bg-gradient-to-r from-blue-800 to-purple-600">
-        Aspiring Frontend | Full-Stack Developer
-      </span>
-    </p>
-    <p className={`text-lg max-w-lg leading-relaxed ${
-      isDark ? 'text-black-400' : 'text-gray-700'
-    }`}>
-      Crafting immersive user experiences and pixel-perfect interfaces. Combining a passion for design with robust frontend architecture to build web solutions that are both beautiful and performant.
-    </p>
-  </div>
-  
-  <div className="flex flex-wrap gap-4">
-    <button
-  className="group px-8 py-4 bg-gradient-to-r from-blue-600 to-purple-600 text-white font-semibold rounded-xl hover:scale-105 transform transition-all duration-200 shadow-lg hover:shadow-xl flex items-center gap-2"
-  onClick={() => {
-    // Replace '/path/to/your/resume.pdf' with the actual path to your resume file in the 'public' directory
-    const resumeUrl = '/Resume.pdf'; 
-    const link = document.createElement('a');
-    link.href = resumeUrl;
-    link.download = 'Vedant_Sanjay_Amrutkar_Resume.pdf'; // Suggested default file name for download
-    document.body.appendChild(link);
-    link.click();
-    document.body.removeChild(link);
-  }}
->
-  <Download size={20} className="group-hover:animate-bounce" />
-  Download Resume
-</button>
-    <button 
-      onClick={scrollToContact}
-      className={`px-8 py-4 font-semibold rounded-xl border-2 transition-all duration-200 hover:scale-105 transform shadow-lg hover:shadow-xl flex items-center gap-2 ${
-        isDark 
-          ? 'border-gray-600 text-black-700 hover:bg-gray-500 hover:border-gray-500' 
-          : 'border-gray-300 text-gray-700 hover:bg-gray-50 hover:border-gray-400'
-      }`}
-    >
-      <Mail size={20} />
-      <span>Contact Me</span>
-    </button>
-  </div>
-</div>
+      {/* Main content centered */}
+      <div className="relative z-10 max-w-4xl mx-auto px-6 flex flex-col items-center justify-center space-y-6">
+        <motion.h1
+          initial={{ opacity: 0, scale: 0.8, y: 30 }}
+          animate={{ opacity: 1, scale: 1, y: 0 }}
+          transition={{ duration: 1, ease: "easeOut" }}
+          className={`relative text-6xl lg:text-[4.5rem] font-extrabold leading-tight 
+            bg-gradient-to-r 
+            ${isDark 
+              ? 'from-white via-teal-400 to-teal-300' 
+              : 'from-pink-600 via-orange-500 to-yellow-500'} 
+            text-transparent bg-clip-text 
+            animate-gradient-x bg-[length:200%_200%]`}
+        >
+          Vedant Sanjay Amrutkar
+        </motion.h1>
 
-          {/* Right Side - Wave Pixelation Reveal + Hover */}
-<div className="lg:col-span-3 relative h-screen flex items-center justify-end">
-  <motion.div
-    className="relative w-[60%] h-[90%] lg:w-[65%] lg:h-[90%] grid grid-rows-10 gap-0 overflow-hidden group"
-    initial="hidden"
-    animate="visible"
-    whileHover="pixelated"
-    variants={{
-      visible: {
-        transition: { staggerChildren: 0.15, delayChildren: 0.3 }
-      },
-      pixelated: {
-        transition: { staggerChildren: 0.05 }
-      }
-    }}
-  >
-    {/* Mobile Image (simplified + reduced size) */}
-  <div className="md:hidden w-[80%] h-[50vh] flex items-center justify-center">
-    <img
-      src="/vedant.png"
-      alt="Vedant"
-      className="w-full h-full object-contain rounded-lg shadow-lg"
-    />
-  </div>
-    {blocks.map((_, i) => (
-      <motion.div
-        key={i}
-        className="w-full h-full"
-        style={{
-          backgroundImage: "url(vedant1.png)",
-          backgroundSize: `100% ${rows * 100}%`,
-          backgroundPosition: `0 ${(i / (rows - 1)) * 100}%`,
-        }}
-        variants={{
-          hidden: { opacity: 0 },
-          visible: { opacity: 1 },
-          pixelated: { opacity: 0.6 }
-        }}
-        transition={{ duration: 0.6, ease: "easeOut" }}
-      />
-    ))}
-  </motion.div>
-</div>
+        <p className={`text-xl lg:text-2xl ${
+          isDark ? 'text-gray-300' : 'text-gray-600'
+        }`}>
+          <span className="block text-transparent bg-clip-text bg-gradient-to-r from-emerald-600 to-teal-400 drop-shadow-[0_0_25px_rgba(50,200,150,0.4)]">
+            Full-stack Developer & Data Enthusiast
+          </span>
+        </p>
 
+        <p className={`text-lg max-w-2xl leading-relaxed ${
+          isDark ? 'text-gray-400' : 'text-gray-700'
+        }`}>
+          Crafting immersive user experiences paired with reliable database solutions, blending creativity and performance to deliver seamless, engaging, and immersive web applications.
+        </p>
 
+        {/* Buttons */}
+        <div className="flex flex-wrap gap-4 justify-center">
+          {/* Resume Button */}
+          <button
+            className={`group px-8 py-4 text-white font-semibold rounded-xl hover:scale-105 transform transition-all duration-200 shadow-lg hover:shadow-xl flex items-center gap-2
+              bg-gradient-to-r ${isDark 
+                ? 'from-emerald-500 to-teal-400' 
+                : 'from-pink-500 to-orange-400'}
+            `}
+            onClick={() => {
+              const resumeUrl = '/Resume.pdf'; 
+              const link = document.createElement('a');
+              link.href = resumeUrl;
+              link.download = 'Vedant_Sanjay_Amrutkar_Resume.pdf';
+              document.body.appendChild(link);
+              link.click();
+              document.body.removeChild(link);
+            }}
+          >
+            <Download size={20} className="group-hover:animate-bounce" />
+            Download Resume
+          </button>
+
+          {/* Contact Button */}
+          <button 
+            onClick={scrollToContact}
+            className={`px-8 py-4 font-semibold rounded-xl transition-all duration-200 hover:scale-105 transform shadow-lg hover:shadow-xl flex items-center gap-2 
+              bg-gradient-to-r ${isDark 
+                ? 'from-gray-700 to-gray-600 text-white hover:from-gray-600 hover:to-gray-500' 
+                : 'from-lime-400 to-green-500 text-white hover:from-lime-500 hover:to-green-600'}
+            `}
+          >
+            <Mail size={20} />
+            <span>My Creations</span>
+          </button>
         </div>
       </div>
     </section>

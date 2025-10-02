@@ -5,6 +5,59 @@ import { useTheme } from '../contexts/ThemeContext';
 const Projects: React.FC = () => {
   const { isDark } = useTheme();
   const [currentIndex, setCurrentIndex] = React.useState(0);
+  const containerRef = React.useRef<HTMLDivElement>(null);
+  const isScrollingRef = React.useRef(false);
+  const scrollTimeoutRef = React.useRef<NodeJS.Timeout | null>(null);
+
+  React.useEffect(() => {
+    const handleWheel = (e: WheelEvent) => {
+      if (!containerRef.current) return;
+      
+      const container = containerRef.current;
+      const rect = container.getBoundingClientRect();
+      
+      // Check if the projects section is in viewport
+      if (rect.top <= window.innerHeight && rect.bottom >= 0) {
+        e.preventDefault();
+        
+        // Prevent multiple rapid scrolls
+        if (isScrollingRef.current) return;
+        
+        isScrollingRef.current = true;
+        
+        // Determine scroll direction
+        if (e.deltaY > 0) {
+          // Scroll down - next slide
+          nextSlide();
+        } else {
+          // Scroll up - previous slide
+          prevSlide();
+        }
+        
+        // Reset scrolling flag after animation
+        if (scrollTimeoutRef.current) {
+          clearTimeout(scrollTimeoutRef.current);
+        }
+        scrollTimeoutRef.current = setTimeout(() => {
+          isScrollingRef.current = false;
+        }, 600);
+      }
+    };
+
+    const container = containerRef.current;
+    if (container) {
+      container.addEventListener('wheel', handleWheel, { passive: false });
+    }
+
+    return () => {
+      if (container) {
+        container.removeEventListener('wheel', handleWheel);
+      }
+      if (scrollTimeoutRef.current) {
+        clearTimeout(scrollTimeoutRef.current);
+      }
+    };
+  }, []);
 
   const projects = [
     {
@@ -62,13 +115,13 @@ const Projects: React.FC = () => {
 
   const nextSlide = () => {
     setCurrentIndex((prevIndex) => 
-      prevIndex >= maxIndex ? 0 : prevIndex + 1
+      prevIndex >= maxIndex ? prevIndex : prevIndex + 1
     );
   };
 
   const prevSlide = () => {
     setCurrentIndex((prevIndex) => 
-      prevIndex === 0 ? maxIndex : prevIndex - 1
+      prevIndex === 0 ? prevIndex : prevIndex - 1
     );
   };
 
@@ -77,12 +130,16 @@ const Projects: React.FC = () => {
   };
 
   return (
-    <section id="projects" className={`py-20 pt-40 ${
-      isDark 
-        ? 'bg-gradient-to-b from-gray-800 to-gray-900' 
-        : 'bg-gradient-to-b from-white to-gray-50'
-    }`}>
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <section 
+      id="projects" 
+      ref={containerRef}
+      className={`py-20 pt-40 min-h-screen flex items-center ${
+        isDark 
+          ? 'bg-gradient-to-b from-gray-800 to-gray-900' 
+          : 'bg-gradient-to-b from-white to-gray-50'
+      }`}
+    >
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 w-full">
         <div className="text-center mb-16">
           <h2 className={`text-4xl lg:text-5xl font-bold mb-6 ${
             isDark ? 'text-white' : 'text-gray-900'
@@ -95,6 +152,11 @@ const Projects: React.FC = () => {
           }`}>
             A showcase of my recent work combining data analytics, web development, and machine learning
           </p>
+          <p className={`text-sm mt-4 ${
+            isDark ? 'text-gray-400' : 'text-gray-500'
+          }`}>
+            Scroll to navigate through projects
+          </p>
         </div>
 
         {/* Slider Container */}
@@ -102,7 +164,7 @@ const Projects: React.FC = () => {
           {/* Main Slider - Shows 3 projects */}
           <div className="overflow-hidden">
             <div 
-              className="flex transition-transform duration-500 ease-out"
+              className="flex transition-transform duration-600 ease-out"
               style={{ transform: `translateX(-${currentIndex * (100 / itemsPerPage)}%)` }}
             >
               {projects.map((project, index) => (
@@ -187,7 +249,12 @@ const Projects: React.FC = () => {
             <>
               <button
                 onClick={prevSlide}
+                disabled={currentIndex === 0}
                 className={`absolute left-0 top-1/2 -translate-y-1/2 -translate-x-4 p-3 rounded-full shadow-xl transition-all duration-200 hover:scale-110 z-10 ${
+                  currentIndex === 0
+                    ? 'opacity-30 cursor-not-allowed'
+                    : 'hover:scale-110'
+                } ${
                   isDark 
                     ? 'bg-gray-800 text-white hover:bg-gray-700' 
                     : 'bg-white text-gray-800 hover:bg-gray-100'
@@ -199,7 +266,12 @@ const Projects: React.FC = () => {
               
               <button
                 onClick={nextSlide}
-                className={`absolute right-0 top-1/2 -translate-y-1/2 translate-x-4 p-3 rounded-full shadow-xl transition-all duration-200 hover:scale-110 z-10 ${
+                disabled={currentIndex >= maxIndex}
+                className={`absolute right-0 top-1/2 -translate-y-1/2 translate-x-4 p-3 rounded-full shadow-xl transition-all duration-200 z-10 ${
+                  currentIndex >= maxIndex
+                    ? 'opacity-30 cursor-not-allowed'
+                    : 'hover:scale-110'
+                } ${
                   isDark 
                     ? 'bg-gray-800 text-white hover:bg-gray-700' 
                     : 'bg-white text-gray-800 hover:bg-gray-100'
