@@ -1,5 +1,5 @@
 import React from 'react';
-import { Globe, BarChart3, Brain, Users } from 'lucide-react';
+import { Globe, Brain, Users } from 'lucide-react';
 import { useTheme } from '../contexts/ThemeContext';
 
 const Services: React.FC = () => {

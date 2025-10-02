@@ -31,7 +31,7 @@ const Contact: React.FC = () => {
     const formspreeEndpoint = 'mgvnonqe'; 
     // -------------------------------------------------------------------
 
-    if (formspreeEndpoint === 'YOUR_FORMSPREE_FORM_ID') {
+    if (formspreeEndpoint === 'mgvnonqe') {
         // This is a safety check for future edits
         console.error("Please update the formspreeEndpoint variable with your actual Formspree ID.");
         setSubmitStatus('error');
