@@ -51,7 +51,7 @@ export const Technologies: React.FC = () => {
           >
             Making apps with modern technologies.
           </motion.h1>
-
+<div className="w-24 h-1 bg-gradient-to-r from-blue-400 to-purple-600 mx-auto mt-4 mb-10"></div>
           <motion.p
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
