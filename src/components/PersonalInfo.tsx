@@ -134,8 +134,11 @@ const Journey = () => {
       className="min-h-screen py-20 bg-gradient-to-b from-gray-900 to-gray-800 text-white relative overflow-hidden"
     >
       <AnimatedBackground />
-      <h2 className="text-4xl font-bold text-center mb-16 relative z-10">🚀 My Journey</h2>
+      <h2 className="text-5xl font-bold text-center mb-16 relative z-10"> My Journey</h2>
+      <div className="w-24 h-1 bg-gradient-to-r from-blue-400 to-purple-600 mx-auto mb-8"></div>
       <div className="relative max-w-4xl mx-auto px-4">
+                  
+
         <WavyLine 
           scrollProgress={smoothProgress}
           totalHeight={totalHeight}

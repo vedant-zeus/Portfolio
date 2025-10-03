@@ -38,8 +38,8 @@ const Projects: React.FC = () => {
       image:
         "https://images.pexels.com/photos/1779487/pexels-photo-1779487.jpeg",
       tech: ["React", "TypeScript", "Tailwind CSS"],
-      github: "https://github.com/vedant-zeus/portfolio",
-      demo: "https://portfolio-example.vercel.app/",
+      github: "https://github.com/vedant-zeus/Portfolio",
+      demo: "https://www.vedantamrutkar.site/",
     },
     {
       title: "Task Manager",
