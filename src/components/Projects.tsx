@@ -8,7 +8,7 @@ const Projects: React.FC = () => {
   const projects = [
     {
       title: "FlavourCraft",
-      description: "A full-stack digital cookbook...",
+      description: "Flavour Craft brings recipes to life with an elegant, user-friendly design.A digital cookbook crafted for food lovers and creators alike.",
       image:
         "https://images.pexels.com/photos/1640777/pexels-photo-1640777.jpeg?auto=compress&cs=tinysrgb&w=800",
       tech: ["MongoDB", "TypeScript", "Vite", "React"],
@@ -17,15 +17,15 @@ const Projects: React.FC = () => {
     },
     {
       title: "Cars E-Commerce",
-      description: "Car marketplace with buying & comparison...",
+      description: "A sleek cars e-commerce platform built for seamless browsing, comparison, and purchase Designed to deliver a premium shopping experience.",
       image: "https://images.pexels.com/photos/799443/pexels-photo-799443.jpeg",
       tech: ["TypeScript", "React (Vite)", "Supabase"],
       github: "https://github.com/vedant-zeus/Cars-Ecommerce.git",
       demo: "https://cars-ecommerce-delta.vercel.app/",
     },
     {
-      title: "Document Wallet",
-      description: "Secure document storage app...",
+      title: "Doc-Vault",
+      description: "Doc-Vault is a secure digital wallet for storing and managing important documents online.Built with reliability and simplicity, it keeps your files safe .",
       image:
         "https://images.pexels.com/photos/33428404/pexels-photo-33428404.jpeg",
       tech: ["TypeScript", "React (Vite)", "Supabase"],
@@ -34,7 +34,7 @@ const Projects: React.FC = () => {
     },
     {
       title: "Portfolio Website",
-      description: "Personal portfolio website showcasing projects.",
+      description: "A personal portfolio website designed to showcase my projects, skills, and creative journey.Built with modern web technologies.",
       image:
         "https://images.pexels.com/photos/1779487/pexels-photo-1779487.jpeg",
       tech: ["React", "TypeScript", "Tailwind CSS"],
@@ -70,7 +70,7 @@ const Projects: React.FC = () => {
       className={`py-20 pt-32 min-h-screen ${
         isDark
           ? "bg-gradient-to-b from-gray-800 to-gray-900"
-          : "bg-gradient-to-b from-white to-gray-50"
+          : "bg-gradient-to-tr from-gray-50 via-pink-100 to-yellow-100"
       }`}
     >
       {/* Inline CSS for animations */}
@@ -110,7 +110,7 @@ const Projects: React.FC = () => {
               isDark ? "text-gray-300" : "text-gray-600"
             }`}
           >
-            A showcase of my recent work combining data analytics, web development, and machine learning
+            A showcase of my recent work combining web development and real time projects
           </p>
         </div>
 
@@ -155,7 +155,7 @@ const ProjectCard: React.FC<{ project: Project; isDark: boolean }> = ({
 }) => {
   return (
     <div
-      className={`rounded-2xl overflow-hidden shadow-lg hover:shadow-2xl transition-all duration-300 hover:scale-105 ${
+      className={`rounded-2xl  overflow-hidden h-100 shadow-lg hover:shadow-2xl transition-all duration-300 hover:scale-105 ${
         isDark
           ? "bg-gray-800 border border-gray-700"
           : "bg-white border border-gray-100"

@@ -46,7 +46,7 @@ const AppContent: React.FC = () => {
         <footer className={`py-8 border-t ${
           isDark 
             ? 'bg-gray-900 border-gray-800 text-gray-400' 
-            : 'bg-white border-gray-200 text-gray-600'
+            : 'bg-gradient-to-tr from-gray-50 via-pink-100 to-yellow-100'
         }`}>
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
             <p>&copy; 2025 Vedant Sanjay Amrutkar. All rights reserved.</p>

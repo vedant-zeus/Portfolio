@@ -60,10 +60,10 @@ const Services: React.FC = () => {
   return (
     <section
       id="services"
-      className={`py-32 pt-30 ${
+      className={`py-20 pt-32 min-h-screen ${
         isDark
-          ? 'bg-gradient-to-b from-gray-900 to-gray-800'
-          : 'bg-gradient-to-b from-gray-50 to-white'
+          ? "bg-gradient-to-b from-gray-800 to-gray-900"
+          : "bg-gradient-to-tr from-gray-50 via-pink-100 to-yellow-100"
       }`}
     >
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">

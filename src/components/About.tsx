@@ -15,11 +15,17 @@ const About: React.FC = () => {
   ];
 
   return (
-    <section id="about" className={`py-32 pt-30 ${
-      isDark 
-        ? 'bg-gradient-to-b from-gray-900 to-gray-800' 
-        : 'bg-gradient-to-b from-gray-100 to-white'
-    }`}>
+    
+    <section id="about"
+      className={`py-32 pt-30 ${
+  isDark
+    ? "bg-gradient-to-tr from-black via-gray-900 to-blue-950"
+    : "bg-gradient-to-tr from-gray-50 via-pink-100 to-yellow-100"
+}`}
+>
+  
+
+      
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-center mb-16">
           <h2 className={`text-4xl lg:text-5xl font-bold mb-6 ${

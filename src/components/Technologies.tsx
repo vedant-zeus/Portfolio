@@ -37,7 +37,7 @@ export const Technologies: React.FC = () => {
       className={`py-32 px-6 transition-colors duration-300 ${
         isDark
           ? "bg-gradient-to-b from-gray-900 to-gray-800 text-white"
-          : "bg-gradient-to-b from-gray-50 to-white text-gray-900"
+          : "bg-gradient-to-br from-gray-50 via-pink-100 to-yellow-100"
       }`}
     >
       <div className="max-w-6xl mx-auto">

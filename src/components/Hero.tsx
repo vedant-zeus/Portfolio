@@ -34,7 +34,7 @@ const Hero: React.FC = () => {
       className={`min-h-screen relative overflow-hidden flex items-center justify-center text-center ${
         isDark 
           ? 'bg-gradient-to-br from-black via-gray-900 to-blue-950' 
-          : 'bg-gradient-to-br from-gray-50 via-pink-50 to-yellow-50'
+          : 'bg-gradient-to-br from-gray-50 via-pink-100 to-yellow-100'
       }`}
     >
       {/* Background Blobs */}
