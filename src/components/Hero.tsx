@@ -1,10 +1,17 @@
 import React from 'react';
-import { Download, Mail, Github, Linkedin, Instagram } from 'lucide-react';
+import { Download, User2 ,Mail, Github, Linkedin, Instagram } from 'lucide-react';
 import { useTheme } from '../contexts/ThemeContext';
 import { motion } from "framer-motion";
 
 const Hero: React.FC = () => {
   const { isDark } = useTheme();
+
+  const scrollToabout = () => {
+    const element = document.querySelector('#about');
+    if (element) {
+      element.scrollIntoView({ behavior: 'smooth' });
+    }
+  };
 
   const scrollToContact = () => {
     const element = document.querySelector('#projects');
@@ -84,24 +91,16 @@ const Hero: React.FC = () => {
 
         {/* Buttons */}
         <motion.div variants={itemVariants} className="flex flex-wrap gap-4 justify-center">
-          <button
+          <button 
+            onClick={scrollToabout}
             className={`group px-8 py-4 text-white font-semibold rounded-xl hover:scale-105 transform transition-all duration-200 shadow-lg hover:shadow-xl flex items-center gap-2
               bg-gradient-to-r ${isDark 
                 ? 'from-emerald-500 to-teal-400' 
                 : 'from-pink-500 to-orange-400'}
             `}
-            onClick={() => {
-              const resumeUrl = '/Resume.pdf'; 
-              const link = document.createElement('a');
-              link.href = resumeUrl;
-              link.download = 'Vedant_Sanjay_Amrutkar_Resume.pdf';
-              document.body.appendChild(link);
-              link.click();
-              document.body.removeChild(link);
-            }}
           >
-            <Download size={20} className="group-hover:animate-bounce" />
-            Download Resume
+            <User2 size={20} />
+            <span>About me </span>
           </button>
 
           <button 
