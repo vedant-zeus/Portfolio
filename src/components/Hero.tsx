@@ -74,7 +74,7 @@ const Hero: React.FC = () => {
             text-transparent bg-clip-text 
             animate-gradient-x bg-[length:200%_200%]`}
         >
-          Vedant Amrutkar
+          Vedant Sanjay Amrutkar
         </motion.h1>
 
         {/* Role */}
