@@ -42,13 +42,13 @@ const Projects: React.FC = () => {
       demo: "https://www.vedantamrutkar.site/",
     },
     {
-      title: "Task Manager",
-      description: "App for managing daily tasks & projects.",
+      title: "Rail Route",
+      description: "Railway route finder application with an immersive user experience.",
       image:
         "https://images.pexels.com/photos/3183150/pexels-photo-3183150.jpeg",
-      tech: ["React", "Node.js", "MongoDB"],
-      github: "https://github.com/vedant-zeus/task-manager",
-      demo: "https://task-manager-example.vercel.app/",
+      tech: ["React", "Node.js", "TypeScript"],
+      github: "https://github.com/vedant-zeus/Railway-Frontend.git",
+      demo: "https://railway-route.netlify.app/",
     },
     {
       title: "Weather Dashboard",
