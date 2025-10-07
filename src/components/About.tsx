@@ -121,7 +121,7 @@ const About: React.FC = () => {
                 : 'from-pink-500 to-orange-400'}
             `}
             onClick={() => {
-              const resumeUrl = '/VedantResume.pdf'; 
+              const resumeUrl = '/Resume.pdf'; 
               const link = document.createElement('a');
               link.href = resumeUrl;
               link.download = 'Vedant_Sanjay_Amrutkar_Resume.pdf';
