@@ -8,6 +8,7 @@ import Services from './components/Services';
 import Technologies from './components/Technologies';
 import PersonalInfo from './components/PersonalInfo';
 import Contact from './components/Contact';
+import Achievements from './components/Achievement';
 
 const AppContent: React.FC = () => {
   const { isDark } = useTheme();
@@ -40,7 +41,9 @@ const AppContent: React.FC = () => {
         <Services />
         <Technologies />
         <Projects />
+        <Achievements />
         <Contact />
+        
         
         {/* Footer */}
         <footer className={`py-8 border-t ${

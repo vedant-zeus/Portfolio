@@ -12,7 +12,7 @@ const Navigation: React.FC = () => {
     { href: '#about', label: 'About Me' },
     { href: '#timeline', label: 'Personal Info' },
     { href: '#services', label: 'Services' },
-    { href: '#technologies', label: 'Tech' },
+    { href: '#achievements', label: 'Achievement' },
     { href: '#projects', label: 'Projects' },
     { href: '#contact', label: 'Contact' }
   ];
