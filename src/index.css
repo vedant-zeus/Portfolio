@@ -55,3 +55,31 @@ html {
 .gradient-text {
   @apply text-transparent bg-clip-text bg-gradient-to-r from-blue-400 to-purple-600;
 }
+@keyframes typing {
+  0% {
+    width: 0;
+  }
+  100% {
+    width: 100%;
+  }
+}
+
+.animate-typing {
+  width: 0;
+  animation: typing 2.5s steps(50, end) forwards;
+}
+
+@keyframes text-glow {
+  0%, 100% {
+    opacity: 0.8;
+    text-shadow: 0 0 8px #60a5fa, 0 0 15px #2563eb;
+  }
+  50% {
+    opacity: 1;
+    text-shadow: 0 0 20px #93c5fd, 0 0 40px #3b82f6;
+  }
+}
+
+.animate-text-glow {
+  animation: text-glow 2s ease-in-out infinite;
+}
