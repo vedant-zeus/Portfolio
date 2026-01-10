@@ -25,7 +25,7 @@ const Projects: React.FC = () => {
     },
     {
       title: "Doc-Vault",
-      description: "Doc-Vault is a secure digital wallet for storing and managing important documents online.Built with reliability and simplicity, it keeps your files safe .",
+      description: "Doc-Vault is a secure digital wallet for storing and managing important documents online. It keeps your files safe .",
       image:
         "https://images.pexels.com/photos/33428404/pexels-photo-33428404.jpeg",
       tech: ["TypeScript", "React (Vite)", "Supabase"],
@@ -34,7 +34,7 @@ const Projects: React.FC = () => {
     },
     {
       title: "Portfolio Website",
-      description: "A personal portfolio website designed to showcase my projects, skills, and creative journey.Built with modern web technologies.",
+      description: "A personal portfolio website designed to showcase my projects, skills, and creative journey. Built with modern web technologies.",
       image:
         "https://images.pexels.com/photos/1779487/pexels-photo-1779487.jpeg",
       tech: ["React", "TypeScript", "Tailwind CSS"],
@@ -56,8 +56,8 @@ const Projects: React.FC = () => {
       image:
         "https://images.pexels.com/photos/1118873/pexels-photo-1118873.jpeg",
       tech: ["React", "Weather API", "Chart.js"],
-      github: "https://github.com/vedant-zeus/weather-app",
-      demo: "https://weather-dashboard-example.vercel.app/",
+      github: "https://github.com/vedant-zeus/WeatherWise.git",
+      demo: "https://weatherwise-zeta.vercel.app/",
     },
   ];
 
