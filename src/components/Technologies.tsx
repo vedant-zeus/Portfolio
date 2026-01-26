@@ -60,7 +60,7 @@ export const Technologies: React.FC = () => {
               isDark ? "text-slate-300" : "text-gray-600"
             }`}
           >
-             deadline or idea — tools I use to build products.
+            Never miss a task, deadline or idea — tools I use to build products.
           </motion.p>
         </header>
 
