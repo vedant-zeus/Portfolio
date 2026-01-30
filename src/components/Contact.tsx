@@ -35,42 +35,38 @@ const Contact: React.FC = () => {
   };
 
   const handleSubmit = async (e: React.FormEvent) => {
-    e.preventDefault();
-    setSubmitStatus("submitting");
+  e.preventDefault();
+  setSubmitStatus("submitting");
 
-    const formspreeEndpoint = "mdazlopv";
+  const formspreeEndpoint = "mdazlopv"; // real ID
 
-    if (formspreeEndpoint === "mdazlopv") {
-      console.error(
-        "Please update the formspreeEndpoint variable with your actual Formspree ID."
-      );
-      setSubmitStatus("error");
-      return;
-    }
-
-    try {
-      const response = await fetch(`https://formspree.io/f/${formspreeEndpoint}`, {
+  try {
+    const response = await fetch(
+      `https://formspree.io/f/${formspreeEndpoint}`,
+      {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
           Accept: "application/json",
         },
         body: JSON.stringify(formData),
-      });
-
-      if (response.ok) {
-        setSubmitStatus("success");
-        setFormData({ name: "", email: "", message: "" });
-      } else {
-        const data = await response.json();
-        console.error("Formspree Error:", data);
-        setSubmitStatus("error");
       }
-    } catch (error) {
-      console.error("Network or Fetch Error:", error);
+    );
+
+    if (response.ok) {
+      setSubmitStatus("success");
+      setFormData({ name: "", email: "", message: "" });
+    } else {
+      const data = await response.json();
+      console.error("Formspree Error:", data);
       setSubmitStatus("error");
     }
-  };
+  } catch (error) {
+    console.error("Network Error:", error);
+    setSubmitStatus("error");
+  }
+};
+
 
   const contactInfo = [
     {
