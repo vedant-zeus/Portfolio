@@ -12,8 +12,8 @@ const Navigation: React.FC = () => {
     { href: '#about', label: 'About Me' },
     { href: '#timeline', label: 'Personal Info' },
     { href: '#services', label: 'Services' },
-    { href: '#achievements', label: 'Achievement' },
     { href: '#projects', label: 'Projects' },
+    {href: '#achievements', label: 'Achievement' },
     { href: '#contact', label: 'Contact' }
   ];
 

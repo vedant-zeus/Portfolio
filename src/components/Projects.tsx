@@ -33,13 +33,13 @@ const Projects: React.FC = () => {
       demo: "https://document-wallet-nine.vercel.app/",
     },
     {
-      title: "Portfolio Website",
-      description: "A personal portfolio website designed to showcase my projects, skills, and creative journey. Built with modern web technologies.",
+      title: "Inventra",
+      description: "A Real-time Inventory Management System",
       image:
-        "https://images.pexels.com/photos/1779487/pexels-photo-1779487.jpeg",
-      tech: ["React", "TypeScript", "Tailwind CSS"],
-      github: "https://github.com/vedant-zeus/Portfolio",
-      demo: "https://www.vedantamrutkar.site/",
+        "/linkit.png",
+      tech: ["React ", "Context API", "React Router","Framer Motion"],
+      github: "https://github.com/vedant-zeus/Inventory-Management-System.git",
+      demo: "https://inventory-management-system-nine-woad.vercel.app/",
     },
     {
       title: "Rail Route",
@@ -59,6 +59,7 @@ const Projects: React.FC = () => {
       github: "https://github.com/vedant-zeus/WeatherWise.git",
       demo: "https://weatherwise-zeta.vercel.app/",
     },
+    
   ];
 
   // Duplicate projects for infinite loop
