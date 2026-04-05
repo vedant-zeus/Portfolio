@@ -16,6 +16,24 @@ const Projects: React.FC = () => {
       demo: "https://flavourcraft.vercel.app/",
     },
     {
+      title: "GymFlow",
+      description: "GymFLow is register book page where user can record their workout and track their progress, also can calculate the calories of each food item",
+      image:
+        "/gmyflow.png",
+      tech: ["MongoDB", "Aiven Cloud", "Vite", "React" ],
+      github: "https://github.com/vedant-zeus/GymFlow.git",
+      demo: "https://gym-flow-ivory.vercel.app/",
+    },
+    {
+      title: "Cric-Search",
+      description: "Just a Project used for web scraping and integrating it with the frontend and live data integration",
+      image:
+        "/cricsearch.jpg",
+      tech: [ "Bootstrap", "Framer Motion", "Vite", "React" ],
+      github: "https://github.com/vedant-zeus/Cric-Search.git",
+      demo: "https://cric-search.vercel.app/",
+    },
+    {
       title: "Cars E-Commerce",
       description: "A sleek cars e-commerce platform built for seamless browsing, comparison, and purchase Designed to deliver a premium shopping experience.",
       image: "https://images.pexels.com/photos/799443/pexels-photo-799443.jpeg",
